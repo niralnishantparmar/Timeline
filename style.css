@@ -1,3 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --bg-gradient: linear-gradient(135deg, #e0f7fa, #e3f2fd);
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --accent: #007bff;
+  --accent-alt: #00c6ff;
+  --text-dark: #1e1e2f;
+  --text-light: #555;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  --radius: 18px;
+  --transition: 0.35s ease;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-gradient);
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text-dark);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20px;
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 2.4rem;
+  background: linear-gradient(90deg, #007bff, #00c6ff, #ff00cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hueShift 6s linear infinite;
+}
+
+@keyframes hueShift {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.timeline {
+  max-width: 750px;
+  width: 100%;
+}
+
+.timeline-container {
+  position: relative;
+  padding-left: 35px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 14px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #00c6ff, #ff00cc);
+  border-radius: 2px;
+  animation: flow 3
+
+
+
+
+/*
 :root {
   --bg: #0f1222;
   --card: rgba(255, 255, 255, 0.08);
@@ -84,7 +150,6 @@ h1 {
   color: #c7c9e0;
 }
 
-/* Overlay Modal */
 .overlay {
   position: fixed;
   inset: 0;
@@ -134,3 +199,4 @@ h1 {
   line-height: 1.6;
   color: #d9daf2;
 }
+*/
