@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Timeline</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="timeline">
+    <h1>Project Milestone Timeline</h1>
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+
+      <div class="timeline-item" data-title="Phase 1: Research" data-content="In this phase, we conducted market research and feasibility studies to identify customer pain points and define project objectives.">
+        <div class="dot"></div>
+        <h2>Research</h2>
+        <p>Initial exploration and discovery.</p>
+      </div>
+
+      <div class="timeline-item" data-title="Phase 2: Design" data-content="The design phase involved wireframing, prototyping, and user experience testing to ensure intuitive workflows and interfaces.">
+        <div class="dot"></div>
+        <h2>Design</h2>
+        <p>UX/UI conceptualization and testing.</p>
+      </div>
+
+      <div class="timeline-item" data-title="Phase 3: Development" data-content="Developers built the MVP using modern frameworks, implementing backend APIs, and continuous integration pipelines.">
+        <div class="dot"></div>
+        <h2>Development</h2>
+        <p>Code implementation and testing.</p>
+      </div>
+
+      <div class="timeline-item" data-title="Phase 4: Launch" data-content="The launch phase included final QA, marketing campaigns, and go-live execution, with analytics tracking for user engagement.">
+        <div class="dot"></div>
+        <h2>Launch</h2>
+        <p>Deployment and performance monitoring.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="overlay" id="overlay">
+    <div class="modal" id="modal">
+      <span class="close">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-content"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
