@@ -1,20 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 :root {
-  --bg-gradient: linear-gradient(135deg, #e0f7fa, #e3f2fd);
-  --card-bg: rgba(255, 255, 255, 0.7);
-  --accent: #007bff;
-  --accent-alt: #00c6ff;
+  --accent: #6a1b9a;
+  --accent-gradient: linear-gradient(135deg, #ba68c8, #64b5f6);
   --text-dark: #1e1e2f;
   --text-light: #555;
-  --shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  --radius: 18px;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --radius: 16px;
   --transition: 0.35s ease;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: var(--bg-gradient);
+  background: white;
   margin: 0;
   min-height: 100vh;
   color: var(--text-dark);
@@ -28,16 +26,10 @@ body {
 h1 {
   text-align: center;
   margin-bottom: 60px;
-  font-size: 2.4rem;
-  background: linear-gradient(90deg, #007bff, #00c6ff, #ff00cc);
+  font-size: 2.3rem;
+  background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: hueShift 6s linear infinite;
-}
-
-@keyframes hueShift {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
 }
 
 .timeline {
@@ -56,68 +48,15 @@ h1 {
   top: 0;
   bottom: 0;
   width: 4px;
-  background: linear-gradient(to bottom, #00c6ff, #ff00cc);
+  background: linear-gradient(to bottom, #ba68c8, #64b5f6);
   border-radius: 2px;
-  animation: flow 3
-
-
-
-
-/*
-:root {
-  --bg: #0f1222;
-  --card: rgba(255, 255, 255, 0.08);
-  --text: #e8eaf6;
-  --accent: #8aa3ff;
-  --radius: 16px;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  --transition: 0.3s ease;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  padding: 40px;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 50px;
-  font-size: 2.2rem;
-}
-
-.timeline {
-  max-width: 700px;
-  width: 100%;
-}
-
-.timeline-container {
-  position: relative;
-  padding-left: 30px;
-}
-
-.timeline-line {
-  position: absolute;
-  left: 10px;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--accent);
-  opacity: 0.6;
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 40px;
-  background: var(--card);
-  padding: 20px 25px;
   border-radius: var(--radius);
+  margin-bottom: 45px;
+  padding: 25px 30px;
   box-shadow: var(--shadow);
   cursor: pointer;
   transition: transform var(--transition), box-shadow var(--transition);
@@ -125,18 +64,19 @@ h1 {
 
 .timeline-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
 }
 
 .timeline-item .dot {
   position: absolute;
   left: -22px;
-  top: 20px;
-  width: 14px;
-  height: 14px;
+  top: 25px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  background: var(--accent);
-  border: 2px solid white;
+  background: var(--accent-gradient);
+  border: 3px solid white;
+  box-shadow: 0 0 12px rgba(106, 27, 154, 0.5);
 }
 
 .timeline-item h2 {
@@ -146,18 +86,36 @@ h1 {
 
 .timeline-item p {
   margin: 0;
-  font-size: 0.95rem;
-  color: #c7c9e0;
+  color: var(--text-light);
+  font-size: 1rem;
 }
 
+/* Specific Box Colors */
+.box1 {
+  background-color: rgba(239, 225, 225, 1);
+}
+
+.box2 {
+  background-color: rgba(240, 210, 218, 1);
+}
+
+.box3 {
+  background-color: rgba(224, 193, 198, 1);
+}
+
+.box4 {
+  background-color: rgba(203, 196, 214, 1);
+}
+
+/* Overlay Modal */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.65);
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 1000;
 }
 
 .overlay.active {
@@ -165,15 +123,17 @@ h1 {
 }
 
 .modal {
-  background: #181b34;
-  padding: 30px;
+  background: white;
+  color: var(--text-dark);
+  padding: 35px;
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
   width: 90%;
-  max-width: 500px;
-  transform: scale(0.8);
+  max-width: 520px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  transform: scale(0.85);
   opacity: 0;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .modal.active {
@@ -185,18 +145,21 @@ h1 {
   position: absolute;
   top: 18px;
   right: 25px;
-  font-size: 1.5rem;
-  color: #fff;
+  font-size: 1.6rem;
+  color: var(--accent);
   cursor: pointer;
+  font-weight: bold;
 }
 
 .modal h2 {
-  margin-top: 0;
   color: var(--accent);
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
 }
 
 .modal p {
+  color: var(--text-light);
   line-height: 1.6;
-  color: #d9daf2;
+  font-size: 1rem;
 }
-*/
