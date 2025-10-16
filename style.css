@@ -90,6 +90,7 @@ h1 {
   margin: 0;
   color: var(--text-light);
   font-size: 1rem;
+  text-align:left;
 }
 
 /* Specific Box Colors */
