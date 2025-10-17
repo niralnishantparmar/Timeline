@@ -2,12 +2,11 @@ document.querySelectorAll('.timeline-item').forEach(item => {
   item.addEventListener('click', () => {
     const title = item.getAttribute('data-title');
     const content = item.getAttribute('data-content');
-    const imageSrc = item.getAttribute('data-image'); // ✅ new line
+    const imageSrc = item.getAttribute('data-image'); // 
 
     document.getElementById('modal-title').textContent = title;
     document.getElementById('modal-content').textContent = content;
 
-    // ✅ Handle modal image
     const imageElement = document.getElementById('modal-image');
     if (imageSrc) {
       imageElement.src = imageSrc;
@@ -19,7 +18,6 @@ document.querySelectorAll('.timeline-item').forEach(item => {
       imageElement.style.display = 'none';
     }
 
-    // ✅ Existing modal logic
     const overlay = document.getElementById('overlay');
     const modal = document.getElementById('modal');
     overlay.classList.add('active');
